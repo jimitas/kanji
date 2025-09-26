@@ -11,6 +11,29 @@ input {
   cursor: pointer;
 }
 
+/* 色弱対応のボタンスタイル */
+.btn-info {
+  background-color: #0ea5e9 !important; /* 明確な青色 */
+  border-color: #0ea5e9 !important;
+  color: white !important;
+}
+
+.btn-info:hover {
+  background-color: #0284c7 !important;
+  border-color: #0284c7 !important;
+}
+
+.btn-warning {
+  background-color: #f59e0b !important; /* 明確なオレンジ色 */
+  border-color: #f59e0b !important;
+  color: white !important;
+}
+
+.btn-warning:hover {
+  background-color: #d97706 !important;
+  border-color: #d97706 !important;
+}
+
 #srcTextArea {
   background-color: antiquewhite;
 }

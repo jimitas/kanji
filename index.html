@@ -4,17 +4,115 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>漢字かんたんプリント</title>
+
+  <!-- SEO Meta Tags -->
+  <title>漢字テスト作成 | 小学校漢字プリント作成ツール - jimitas.com</title>
+  <meta
+    name="description"
+    content="小学校の漢字テスト・漢字プリントを簡単に作成できるツール。1年生から6年生まで学年別対応。線引き問題やシャッフル機能で効率的な漢字学習をサポート。jimitas.comの教育支援サービス。"
+  />
+  <meta
+    name="keywords"
+    content="小学校,漢字テスト作成,漢字プリント作成,漢字プリント,漢字,漢字テスト,小学生,学習支援,教育ツール,jimitas,ジミタス,先生,教師,宿題,ドリル,国語"
+  />
+  <meta name="author" content="jimitas.com" />
+  <meta name="robots" content="index,follow" />
+  <meta name="language" content="ja" />
+
+  <!-- Open Graph Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="jimitas.com" />
+  <meta
+    property="og:title"
+    content="漢字テスト作成 | 小学校漢字プリント作成ツール"
+  />
+  <meta
+    property="og:description"
+    content="小学校の漢字テスト・漢字プリントを簡単に作成できるツール。1年生から6年生まで学年別対応。"
+  />
+  <meta property="og:url" content="https://jimitas.com/kanji/" />
+  <meta
+    property="og:image"
+    content="https://jimitas.com/kanji/og-image.png"
+  />
+  <meta property="og:locale" content="ja_JP" />
+
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@jimitas" />
+  <meta
+    name="twitter:title"
+    content="漢字テスト作成 | 小学校漢字プリント作成ツール"
+  />
+  <meta
+    name="twitter:description"
+    content="小学校の漢字テスト・漢字プリントを簡単に作成できるツール。1年生から6年生まで学年別対応。"
+  />
+  <meta
+    name="twitter:image"
+    content="https://jimitas.com/kanji/twitter-card.png"
+  />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://jimitas.com/kanji/" />
+
+  <!-- Additional SEO Meta Tags -->
+  <meta name="geo.region" content="JP" />
+  <meta name="geo.country" content="JP" />
+  <meta name="rating" content="general" />
+  <meta name="revisit-after" content="7 days" />
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "漢字テスト作成ツール",
+      "description": "小学校の漢字テスト・漢字プリントを簡単に作成できるツール",
+      "url": "https://jimitas.com/kanji/",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "JPY"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "jimitas.com",
+        "url": "https://jimitas.com"
+      },
+      "audience": {
+        "@type": "EducationalAudience",
+        "educationalRole": "teacher"
+      },
+      "educationalLevel": "elementary school",
+      "inLanguage": "ja",
+      "keywords": "小学校,漢字テスト作成,漢字プリント作成,漢字プリント,漢字,漢字テスト,教育ツール"
+    }
+  </script>
+
+  <!-- Hidden SEO Content -->
+  <div style="position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border: 0 !important;">
+    <h1>小学校漢字テスト作成・漢字プリント作成ツール | jimitas.com</h1>
+    <p>
+      小学校1年生から6年生まで対応した漢字テスト作成・漢字プリント作成ツールです。先生方の授業準備や宿題作成をサポートします。
+    </p>
+    <p>
+      特徴：学年別漢字対応、線引き問題作成、問題シャッフル機能、印刷対応、データ保存・読み込み機能
+    </p>
+  </div>
+
   <div class="d-flex m-2">
     <div class="no_print">
       <div class="h3" style="font-family: UD デジタル 教科書体 NK-B;">漢字かんたんプリント作成</div>
       <div class="m-1">
-        <form action="" id="grade" name="radio" class="m-2 p-1" style="background-color:lightyellow;border:red 1px solid;width:360px;">
+        <form action="" id="grade" name="radio" class="m-2 p-1" style="background-color:lightyellow;border:#ff6600 2px solid;width:360px;">
           簡単セット
           <label for="g1">
             <input type="radio" value="1" name="grade" id="g1">１年
@@ -40,11 +138,11 @@
         </form>
         <form action="">
           <input type="button" class="btn btn-primary px-4" value="　作　成　" onclick="check()">
-          <input type="button" class="btn btn-success px-4" value="シャッフル" onclick="shuffle();" />
-          <input type="button" class="btn btn-danger px-4" value="　印　刷　" onclick="window.print();" />
+          <input type="button" class="btn btn-info px-4" value="シャッフル" onclick="shuffle();" />
+          <input type="button" class="btn btn-warning px-4" value="　印　刷　" onclick="window.print();" />
         </form>
         <form class="mt-2" action="">
-          ファイル名<input id="fileName" type="text" name="" id="">
+          ファイル名<input id="fileName" type="text" name="">
           <input id="save" type="button" class="btn btn-secondary" value="Save Text" />
           <input type="file" id="selfile"><br>
         </form>
@@ -52,12 +150,12 @@
     </div>
 
     <div>
-      <div class="no_print" style="border:solid 1px #333;width:800px;">
+      <div class="no_print" style="border:solid 1px #333;width:700px;">
         <div class="h6">使い方</div>
-        <div class="h6"><span style="background-color:antiquewhite">テキストエリア</span>の中に問題を書いていきます。次の問題は改行してください。上から順に１行ごとに１問ずつ対応します。</div>
-        <div class="h6">線を引きたい場所を<span style="color:red">@(半角英数)@</span>で囲みます。</div>
-        <div class="h6">作成ボタンを押すと,データが反映されます。<span style="color:red">シャッフルで順番を変える</span>ことができます。</div>
-        <div class="h6">作成データはテキストファイルで<span style="color:red">保存・読み出し可能</span>です。</div>
+        <div class="h6"><span style="background-color:antiquewhite">テキストエリア</span>の中に問題を書いていきます。次の問題は改行してください。<br>上から順に１行ごとに１問ずつ対応します。</div>
+        <div class="h6">線を引きたい場所を<span style="color:#ff6600;font-weight:bold">@(半角英数)@</span>で囲みます。</div>
+        <div class="h6">作成ボタンを押すと,データが反映されます。<span style="color:#ff6600;font-weight:bold">シャッフルで順番を変える</span>ことができます。</div>
+        <div class="h6">作成データはテキストファイルで<span style="color:#ff6600;font-weight:bold">保存・読み出し可能</span>です。</div>
       </div>
       <div class="no_print" style="background-color: antiquewhite;width:500px;">
         <form class="m-2" name="form">

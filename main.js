@@ -307,10 +307,13 @@ function save() {
   const a = document.createElement("a");
   a.href = URL.createObjectURL(blob);
   const now = new Date();
-  messageElm = fileName.value || `${now.getFullYear()}/${now.getMonth()}/${now.getDate()}/${now.getHours()}/${now.getMinutes()}-kanji`;
-  a.download = messageElm + ".txt";
+  const defaultFileName = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}-${String(now.getHours()).padStart(2, '0')}-${String(now.getMinutes()).padStart(2, '0')}-kanji`;
+  const safeFileName = fileName.value || defaultFileName;
+  a.download = safeFileName + ".txt";
   a.click();
-  document.getElementById("srcTextArea").value = txt;
+
+  // Clean up
+  URL.revokeObjectURL(a.href);
 }
 
 function load() {
@@ -320,18 +323,59 @@ function load() {
   obj1.addEventListener(
     "change",
     function (evt) {
-      var file = evt.target.files;
+      var file = evt.target.files[0];
+      if (!file) return;
+
+      // ファイルタイプチェック
+      if (file.type && !file.type.startsWith('text/')) {
+        alert('テキストファイル（.txt）のみ対応しています。');
+        return;
+      }
+
+      // ファイルサイズチェック（1MB以下）
+      const maxSize = 1 * 1024 * 1024; // 1MB
+      if (file.size > maxSize) {
+        alert('ファイルサイズが大きすぎます（1MB以下にしてください）。');
+        return;
+      }
 
       //FileReaderの作成
       var reader = new FileReader();
-      //テキスト形式で読み込む
-      reader.readAsText(file[0]);
 
       //読込終了後の処理
       reader.onload = function (ev) {
-        //テキストエリアに表示する
-        document.getElementById("srcTextArea").value = reader.result;
+        try {
+          var content = reader.result;
+
+          // 基本的な文字列の長さチェック
+          const maxLength = 10000; // 約10,000文字まで
+          if (content.length > maxLength) {
+            if (!confirm(`テキストが長すぎます（${content.length}文字）。最初の${maxLength}文字のみ読み込みますか？`)) {
+              return;
+            }
+            content = content.substring(0, maxLength);
+          }
+
+          // HTMLタグやスクリプトの除去
+          content = content.replace(/<[^>]*>/g, '');
+
+          // 制御文字の除去（改行とタブ以外）
+          content = content.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F-\x9F]/g, '');
+
+          //テキストエリアに表示する
+          document.getElementById("srcTextArea").value = content;
+        } catch (error) {
+          alert('ファイルの読み込みに失敗しました。正しいテキストファイルを選択してください。');
+          console.error('File reading error:', error);
+        }
       };
+
+      reader.onerror = function() {
+        alert('ファイルの読み込み中にエラーが発生しました。');
+      };
+
+      //テキスト形式で読み込む
+      reader.readAsText(file, 'UTF-8');
     },
     false
   );
