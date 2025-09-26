@@ -7,14 +7,8 @@
 
   <!-- SEO Meta Tags -->
   <title>漢字テスト作成 | 小学校漢字プリント作成ツール - jimitas.com</title>
-  <meta
-    name="description"
-    content="小学校の漢字テスト・漢字プリントを簡単に作成できるツール。1年生から6年生まで学年別対応。線引き問題やシャッフル機能で効率的な漢字学習をサポート。jimitas.comの教育支援サービス。"
-  />
-  <meta
-    name="keywords"
-    content="小学校,漢字テスト作成,漢字プリント作成,漢字プリント,漢字,漢字テスト,小学生,学習支援,教育ツール,jimitas,ジミタス,先生,教師,宿題,ドリル,国語"
-  />
+  <meta name="description" content="小学校の漢字テスト・漢字プリントを簡単に作成できるツール。1年生から6年生まで学年別対応。線引き問題やシャッフル機能で効率的な漢字学習をサポート。jimitas.comの教育支援サービス。" />
+  <meta name="keywords" content="小学校,漢字テスト作成,漢字プリント作成,漢字プリント,漢字,漢字テスト,小学生,学習支援,教育ツール,jimitas,ジミタス,先生,教師,宿題,ドリル,国語" />
   <meta name="author" content="jimitas.com" />
   <meta name="robots" content="index,follow" />
   <meta name="language" content="ja" />
@@ -22,36 +16,18 @@
   <!-- Open Graph Tags -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="jimitas.com" />
-  <meta
-    property="og:title"
-    content="漢字テスト作成 | 小学校漢字プリント作成ツール"
-  />
-  <meta
-    property="og:description"
-    content="小学校の漢字テスト・漢字プリントを簡単に作成できるツール。1年生から6年生まで学年別対応。"
-  />
+  <meta property="og:title" content="漢字テスト作成 | 小学校漢字プリント作成ツール" />
+  <meta property="og:description" content="小学校の漢字テスト・漢字プリントを簡単に作成できるツール。1年生から6年生まで学年別対応。" />
   <meta property="og:url" content="https://jimitas.com/kanji/" />
-  <meta
-    property="og:image"
-    content="https://jimitas.com/kanji/og-image.png"
-  />
+  <meta property="og:image" content="https://jimitas.com/kanji/og-image.png" />
   <meta property="og:locale" content="ja_JP" />
 
   <!-- Twitter Card Tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@jimitas" />
-  <meta
-    name="twitter:title"
-    content="漢字テスト作成 | 小学校漢字プリント作成ツール"
-  />
-  <meta
-    name="twitter:description"
-    content="小学校の漢字テスト・漢字プリントを簡単に作成できるツール。1年生から6年生まで学年別対応。"
-  />
-  <meta
-    name="twitter:image"
-    content="https://jimitas.com/kanji/twitter-card.png"
-  />
+  <meta name="twitter:title" content="漢字テスト作成 | 小学校漢字プリント作成ツール" />
+  <meta name="twitter:description" content="小学校の漢字テスト・漢字プリントを簡単に作成できるツール。1年生から6年生まで学年別対応。" />
+  <meta name="twitter:image" content="https://jimitas.com/kanji/twitter-card.png" />
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://jimitas.com/kanji/" />
@@ -109,7 +85,7 @@
   </div>
 
   <div class="d-flex m-2">
-    <div class="no_print">
+    <div class="no_print" style="height: 720px;">
       <div class="h3" style="font-family: UD デジタル 教科書体 NK-B;">漢字かんたんプリント作成</div>
       <div class="m-1">
         <form action="" id="grade" name="radio" class="m-2 p-1" style="background-color:lightyellow;border:#ff6600 2px solid;width:360px;">
@@ -134,7 +110,7 @@
           </label>
         </form>
         <form class="m-2" name="form">
-          <textarea id="srcTextArea" cols="40" rows="20" name="comment"></textarea>
+          <textarea id="srcTextArea" cols="40" rows="20" name="comment" placeholder="問題を入力してください。線を引きたい部分は@で囲んでください（例：@漢字@）"></textarea>
         </form>
         <form action="">
           <input type="button" class="btn btn-primary px-4" value="　作　成　" onclick="check()">
@@ -142,7 +118,7 @@
           <input type="button" class="btn btn-warning px-4" value="　印　刷　" onclick="window.print();" />
         </form>
         <form class="mt-2" action="">
-          ファイル名<input id="fileName" type="text" name="">
+          ファイル名<input id="fileName" type="text" name="" placeholder="ファイル名を入力（省略可）">
           <input id="save" type="button" class="btn btn-secondary" value="Save Text" />
           <input type="file" id="selfile"><br>
         </form>
@@ -174,7 +150,7 @@
           説明<select name="" id="setumeiSelect" style="width:450px;"></select>
         </form>
       </div>
-      <P class="no_print">↓印刷イメージ</P>
+      <P class="no_print" style="width: 160px;">↓印刷イメージ</P>
       <div style="height: 748px;" class="print_pages">
         <div class="d-flex" style="margin-right:10px;align-items:center;">
           <div class="h1" id="Hyoudai"></div>

@@ -3,6 +3,7 @@
 body {
   font-family: UD デジタル 教科書体 NK-R;
   width: 100px;
+  background-color: #f8f9fa;
 }
 
 select,
@@ -34,8 +35,67 @@ input {
   border-color: #d97706 !important;
 }
 
+
+
 #srcTextArea {
-  background-color: antiquewhite;
+  background-color: #fefefe;
+  border: 2px solid #dee2e6;
+  border-radius: 0.5rem;
+  transition: all 0.15s ease-in-out;
+}
+
+#srcTextArea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  outline: 0;
+}
+
+/* ボタンにやわらかさを追加 */
+.btn {
+  border-radius: 0.5rem;
+  transition: all 0.15s ease-in-out;
+  font-weight: 500;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+}
+
+/* 入力欄のやわらかさ */
+input[type="text"] {
+  border: 1px solid #dee2e6;
+  border-radius: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  transition: all 0.15s ease-in-out;
+}
+
+input[type="text"]:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  outline: 0;
+}
+
+/* セレクトボックスのやわらかさ */
+select {
+  border: 1px solid #dee2e6;
+  border-radius: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  background-color: white;
+}
+
+/* 使い方ボックスのやわらかさ */
+.no_print[style*="border:solid"] {
+  border: 1px solid #dee2e6 !important;
+  border-radius: 0.5rem !important;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+/* 設定ボックスのやわらかさ */
+.no_print[style*="background-color: antiquewhite"] {
+  background-color: #fff3cd !important;
+  border: 1px solid #ffeaa7 !important;
+  border-radius: 0.5rem !important;
 }
 
 .print_pages {
@@ -46,6 +106,10 @@ input {
   width: 297mm;
   transform-origin: 0 0;
   transform: scale(0.5);
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  overflow: hidden;
 }
 
 /*最後のページは改ページを入れない*/
@@ -53,10 +117,16 @@ input {
   page-break-after: auto;
 }
 
+/* 元の.no_printスタイル（フォントサイズとマージン）は上のやわらかいスタイルに統合 */
 .no_print {
   font-size: 14px;
   margin-right: 50px;
   z-index: 10;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 @media print {
