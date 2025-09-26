@@ -1,0 +1,48 @@
+
+
+body {
+  font-family: UD デジタル 教科書体 NK-R;
+  width: 100px;
+}
+
+select,
+label,
+input {
+  cursor: pointer;
+}
+
+#srcTextArea {
+  background-color: antiquewhite;
+}
+
+.print_pages {
+  z-index: 1;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+  height: 210mm;
+  width: 297mm;
+  transform-origin: 0 0;
+  transform: scale(0.5);
+}
+
+/*最後のページは改ページを入れない*/
+.print_pages:last-child {
+  page-break-after: auto;
+}
+
+.no_print {
+  font-size: 14px;
+  margin-right: 50px;
+  z-index: 10;
+}
+
+@media print {
+  .print_pages{
+    transform-origin: 0 0;
+    transform: scale(1);
+  }
+  .no_print {
+    margin-right: auto;
+    display: none;
+  }
+}
